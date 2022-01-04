@@ -6,7 +6,15 @@ namespace WireBrainCoffee.StorageApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var employeeRepository = new EmployeeRepository();
+
+            employeeRepository.Add(new Employee {FirstName = "Casper"});
+            employeeRepository.Add(new Employee {FirstName = "Whitney"});
+            employeeRepository.Add(new Employee {FirstName = "Jacob"});
+
+            employeeRepository.Save();
+
+            Console.ReadLine();
         }
     }
 }
