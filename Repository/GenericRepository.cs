@@ -14,6 +14,7 @@ namespace WireBrainCoffee
         }
         public void Add (T item)
         {
+            item.Id = _items.Any() ? _items.Max(item => item.Id) + 1 : 1;
             _items.Add(item);
         }
 
