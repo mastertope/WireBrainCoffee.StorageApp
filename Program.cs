@@ -6,7 +6,7 @@ namespace WireBrainCoffee.StorageApp
     {
         static void Main(string[] args)
         {
-            var employeeRepository = new EmployeeRepository();
+            var employeeRepository = new GenericRepository<Employee>();
 
             employeeRepository.Add(new Employee {FirstName = "Casper"});
             employeeRepository.Add(new Employee {FirstName = "Whitney"});
@@ -14,6 +14,12 @@ namespace WireBrainCoffee.StorageApp
 
             employeeRepository.Save();
 
+            var organizationRepository = new GenericRepository<Organization>();
+            organizationRepository.Add(new Organization {Name = "PluralSight"});
+            organizationRepository.Add(new Organization {Name = "Globalmantics"});
+
+            organizationRepository.Save();
+            
             Console.ReadLine();
         }
     }
